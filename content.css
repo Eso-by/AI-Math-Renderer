@@ -1,0 +1,20 @@
+[data-aimr-rendered="true"] {
+  display: inline;
+}
+[data-aimr-rendered="true"] .katex {
+  font-size: 1em;
+}
+[data-aimr-math="display"] {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+  margin: 0.35em 0;
+}
+[data-aimr-math="display"] .katex-display {
+  display: block;
+  max-width: 100%;
+  padding: 0.12em 0;
+  margin: 0;
+}

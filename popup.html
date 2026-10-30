@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Math Renderer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="logo">∑</div>
+      <div><h1>AI Math Renderer</h1><p>AI 对话网页公式修复</p></div>
+    </header>
+    <section class="site">
+      <span class="label">当前网站</span>
+      <strong id="host">读取中…</strong>
+    </section>
+    <label class="toggle-row">
+      <span><strong>在此网站启用</strong><small>自动检测并补渲染未识别的公式</small></span>
+      <input id="enabled" type="checkbox">
+      <i></i>
+    </label>
+    <button id="rescan" class="primary">立即重新扫描</button>
+    <div id="status" class="status">正在连接页面…</div>
+    <footer>本地 KaTeX 渲染 · 不上传对话内容</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

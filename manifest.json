@@ -1,0 +1,75 @@
+{
+  "manifest_version": 3,
+  "name": "AI Math Renderer",
+  "version": "0.2.0",
+  "description": "在 AI 对话网页中自动补渲染未解析的 LaTeX 数学公式。",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://deepseek.com/*",
+    "https://*.deepseek.com/*",
+    "https://tongyi.com/*",
+    "https://*.tongyi.com/*",
+    "https://qianwen.com/*",
+    "https://*.qianwen.com/*",
+    "https://doubao.com/*",
+    "https://*.doubao.com/*",
+    "https://kimi.com/*",
+    "https://*.kimi.com/*",
+    "https://moonshot.cn/*",
+    "https://*.moonshot.cn/*",
+    "https://yuanbao.tencent.com/*",
+    "https://chatglm.cn/*",
+    "https://*.chatglm.cn/*",
+    "https://z.ai/*",
+    "https://*.z.ai/*",
+    "https://qwen.ai/*",
+    "https://*.qwen.ai/*",
+    "https://yiyan.baidu.com/*",
+    "https://chat.baidu.com/*",
+    "https://xinghuo.xfyun.cn/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://deepseek.com/*",
+        "https://*.deepseek.com/*",
+        "https://tongyi.com/*",
+        "https://*.tongyi.com/*",
+        "https://qianwen.com/*",
+        "https://*.qianwen.com/*",
+        "https://doubao.com/*",
+        "https://*.doubao.com/*",
+        "https://kimi.com/*",
+        "https://*.kimi.com/*",
+        "https://moonshot.cn/*",
+        "https://*.moonshot.cn/*",
+        "https://yuanbao.tencent.com/*",
+        "https://chatglm.cn/*",
+        "https://*.chatglm.cn/*",
+        "https://z.ai/*",
+        "https://*.z.ai/*",
+        "https://qwen.ai/*",
+        "https://*.qwen.ai/*",
+        "https://yiyan.baidu.com/*",
+        "https://chat.baidu.com/*",
+        "https://xinghuo.xfyun.cn/*"
+      ],
+      "js": [
+        "vendor/katex/katex.min.js",
+        "parser.js",
+        "content.js"
+      ],
+      "css": [
+        "vendor/katex/katex.min.css",
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "AI Math Renderer",
+    "default_popup": "popup.html"
+  }
+}

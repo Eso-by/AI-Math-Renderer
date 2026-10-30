@@ -1,0 +1,13 @@
+{
+  "name": "ai-math-renderer",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Cross-site LaTeX recovery extension for AI chat pages",
+  "license": "MIT",
+  "devDependencies": {
+    "katex": "0.19.1"
+  },
+  "scripts": {
+    "test": "node tests/parser-smoke.test.js"
+  }
+}
