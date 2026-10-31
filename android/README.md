@@ -14,11 +14,7 @@ Android companion prototype for the AI Math Renderer browser extension.
 
 Requirements: Android Studio with JDK 17 and Android SDK Platform 35.
 
-Open the `android/` directory in Android Studio, allow Gradle sync, then build:
-
-```bash
-gradlew.bat :app:assembleDebug
-```
+Open the `android/` directory in Android Studio and allow Gradle sync. Then use **Build → Build Bundle(s) / APK(s) → Build APK(s)**. If you have Gradle installed locally, you can also run `gradle :app:assembleDebug` from this directory.
 
 APK output:
 
