@@ -76,11 +76,11 @@ class MathAccessibilityService : AccessibilityService() {
 
     private fun findMathMarkers(text: String): List<String> {
         val patterns = listOf(
-            Regex("""\\\\\[[\\s\\S]{1,300}?\\\\\]"""),
-            Regex("""\\\\\([\\s\\S]{1,200}?\\\\\)"""),
-            Regex("""\\$\\$[\\s\\S]{1,300}?\\$\\$"""),
-            Regex("""\\$[^\\$\\n]{1,160}\\$"""),
-            Regex("""\\\\begin\\{(?:aligned|equation|gather|cases|matrix|pmatrix|bmatrix)\\}""")
+            Regex("""\\\[[\s\S]{1,300}?\\\]"""),
+            Regex("""\\\([\s\S]{1,200}?\\\)"""),
+            Regex("""\$\$[\s\S]{1,300}?\$\$"""),
+            Regex("""\$[^\$\n]{1,160}\$"""),
+            Regex("""\\begin\{(?:aligned|equation|gather|cases|matrix|pmatrix|bmatrix)\}""")
         )
         return patterns.flatMap { regex -> regex.findAll(text).map { it.value }.toList() }
             .distinct().take(8)
