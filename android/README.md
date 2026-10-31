@@ -45,3 +45,7 @@ The diagnostic capture is opt-in and local-only. The latest snapshot is stored i
 ## Next gate
 
 Do not implement pixel-perfect replacement until a real device report confirms that the accessibility tree exposes enough source text and geometry.
+
+## First target device
+
+The first target is **HONOR Play 5T Vitality Edition (NZA-AL00)**, running Android 10 / Magic UI 4.0. Public device specifications list a MediaTek Helio P35-class MT6765 platform and 6 GB RAM. The app deliberately avoids Google Play Services and can be installed as a sideloaded APK. Manufacturer-specific battery/background settings will be checked on-device after the first diagnostic build.
