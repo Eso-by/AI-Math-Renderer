@@ -5,7 +5,6 @@ import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
-import android.view.Gravity
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ScrollView
@@ -33,7 +32,7 @@ class MainActivity : Activity() {
             setOnClickListener { startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)) }
         }
         val enableButton = Button(this).apply {
-            text = "开始 / 停止 ChatGPT 节点诊断"
+            text = "开始 / 停止国产 AI App 节点诊断"
             setOnClickListener {
                 val enabled = prefs.getBoolean("capture_enabled", false)
                 prefs.edit().putBoolean("capture_enabled", !enabled).apply()
@@ -77,12 +76,12 @@ class MainActivity : Activity() {
         }
         val capture = prefs.getBoolean("capture_enabled", false)
         status.text = "无障碍服务：${if (serviceEnabled) "已开启" else "未开启"}\n" +
-            "节点诊断：${if (capture) "运行中（仅 ChatGPT）" else "已停止"}\n" +
-            "目标包名：com.openai.chatgpt"
+            "节点诊断：${if (capture) "运行中（DeepSeek / 豆包 / Kimi / 千问 / 元宝）" else "已停止"}\n" +
+            "目标：DeepSeek、豆包、Kimi、通义千问、腾讯元宝"
     }
 
     private fun refreshReport() {
-        report.text = prefs.getString("last_report", "尚无诊断数据。\n\n操作步骤：\n1. 开启无障碍服务。\n2. 点击“开始节点诊断”。\n3. 打开 ChatGPT App，进入一条包含公式的回答。\n4. 返回本 App，点击“刷新诊断结果”。")
+        report.text = prefs.getString("last_report", "尚无诊断数据。\n\n操作步骤：\n1. 开启无障碍服务。\n2. 点击“开始节点诊断”。\n3. 打开 DeepSeek、豆包、Kimi、通义千问或腾讯元宝，进入一条包含公式的回答。\n4. 返回本 App，点击“刷新诊断结果”。")
             ?: "尚无诊断数据。"
     }
 }
