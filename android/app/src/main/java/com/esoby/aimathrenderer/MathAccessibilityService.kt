@@ -10,13 +10,13 @@ import java.util.Locale
 
 class MathAccessibilityService : AccessibilityService() {
     private val prefs by lazy { getSharedPreferences("diagnostics", MODE_PRIVATE) }
-    private val targetPackage = "com.openai.chatgpt"
+    private val targetPackages = setOf("com.deepseek.chat", "com.larus.nova", "com.moonshot.kimichat", "ai.qwenlm.chat.android", "com.tencent.hunyuan.app.chat")
     private val maxNodes = 700
     private val maxChars = 24000
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         if (!prefs.getBoolean("capture_enabled", false)) return
-        if (event?.packageName?.toString() != targetPackage) return
+        if (event?.packageName?.toString() !in targetPackages) return
         // Ignore high-frequency selection/focus events; inspect after content/window/scroll changes.
         val root = rootInActiveWindow ?: return
         try {
